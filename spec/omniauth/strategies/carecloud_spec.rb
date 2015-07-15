@@ -14,10 +14,10 @@ describe OmniAuth::Strategies::CareCloud do
   end
 
   it "has correct authorize url" do
-    expect(subject.options.client_options.authorize_url).to eq("https://api.carecloud.com/v2/oauth2/authorization")
+    expect(subject.options.client_options.authorize_url).to eq("https://api.carecloud.com/oauth2/authorize")
   end
 
   it "has correct token url" do
-    expect(subject.options.client_options.token_url).to eq("https://api.carecloud.com/v2/oauth2/token_info")
+    expect(subject.options.client_options.token_url).to eq("https://api.carecloud.com/oauth2/access_token")
   end
 end

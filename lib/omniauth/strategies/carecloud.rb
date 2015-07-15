@@ -7,9 +7,11 @@ module OmniAuth
       include OmniAuth::Strategy
       option :client_options, {
         site: "https://api.carecloud.com",
-        authorize_url: "https://api.carecloud.com/v2/oauth2/authorization",
-        token_url: "https://api.carecloud.com/v2/oauth2/token_info"
+        authorize_url: "https://api.carecloud.com/oauth2/authorize",
+        token_url: "https://api.carecloud.com/oauth2/access_token"
       }
     end
   end
 end
+
+OmniAuth.config.add_camelization "carecloud", "CareCloud"
