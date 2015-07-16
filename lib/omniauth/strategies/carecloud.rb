@@ -10,6 +10,16 @@ module OmniAuth
         authorize_url: "https://api.carecloud.com/oauth2/authorize",
         token_url: "https://api.carecloud.com/oauth2/access_token"
       }
+      
+      uid { user_info["id"] }
+
+      def user_info
+        @user_info ||= authorization_info["user"]
+      end
+
+      def authorization_info
+        @authorization_info ||= access_token.get("oauth2/authorization").parsed
+      end
 
       def build_access_token
         options.token_params.merge!(:headers => {'Authorization' => basic_auth_header })
