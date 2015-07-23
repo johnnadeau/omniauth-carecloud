@@ -12,6 +12,14 @@ module OmniAuth
       }
       
       uid { user_info["id"] }
+      
+      info do
+        {
+          "name" => user_info["first_name"] + user_info["last_name"],
+          "first_name" => user_info["first_name"],
+          "last_name" => user_info["last_name"]
+        }
+      end
 
       def user_info
         @user_info ||= authorization_info["user"]
