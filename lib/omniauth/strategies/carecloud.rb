@@ -6,7 +6,7 @@ module OmniAuth
     class CareCloud < OmniAuth::Strategies::OAuth2
       include OmniAuth::Strategy
       option :client_options, {
-        site: "https://api.carecloud.com",
+        site: "https://api.carecloud.com/v2",
         authorize_url: "https://api.carecloud.com/oauth2/authorize",
         token_url: "https://api.carecloud.com/oauth2/access_token"
       }

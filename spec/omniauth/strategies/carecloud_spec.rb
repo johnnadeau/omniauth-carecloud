@@ -11,7 +11,7 @@ describe OmniAuth::Strategies::CareCloud do
   end
 
   it "has correct site" do
-    expect(subject.options.client_options.site).to eq("https://api.carecloud.com")
+    expect(subject.options.client_options.site).to eq("https://api.carecloud.com/v2")
   end
 
   it "has correct authorize url" do
